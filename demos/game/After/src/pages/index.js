@@ -43,9 +43,8 @@ const choices = (props: IndexProps) => html`
 </div>`
 
 const index = (props: IndexProps) => html`
-    <div class="index">
-      ${title(props)}
-    </div>
+  <div class="index">
+    ${title(props)}
     <div class="index__body">
       ${text(props)}
     </div>
