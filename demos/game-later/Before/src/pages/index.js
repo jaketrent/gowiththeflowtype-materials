@@ -11,11 +11,22 @@ type IndexProps = {
 }
 
 const title = (_: IndexProps) => html`
-<h4 class="index__title">
-  <a href="/" class="index__title-link">
-    Galactic Pigs: A Prelude
-  </a>
-</h4>`
+  <h4 class="index__title">
+    <a href="/" class="index__title-link">
+      Galactic Pigs: A Prelude
+    </a>
+  </h4>
+`
+
+export const image = (props: IndexProps) =>
+  props.narrative.image
+    ? html`<img src="${props.narrative.image}" class="index__image" />`
+    : null
+
+export const end = (props: IndexProps) =>
+  props.narrative.choices
+    ? null
+    : html`<div class="index__end">The end.  Now play the game...</div>`
 
 const text = (props: IndexProps) =>
   html`<div class="index__text">${props.narrative.text}</div>`
@@ -38,23 +49,27 @@ const getChoices = (props: IndexProps) =>
   )
 
 const choices = (props: IndexProps) => html`
-<div class="index__choices">
-  ${getChoices(props).map(n => choice({ narrative: n, store: props.store }))}
-</div>`
+  <div class="index__choices">
+    ${getChoices(props).map(n => choice({ narrative: n, store: props.store }))}
+  </div>
+`
 
 const index = (props: IndexProps) => html`
   <div class="index">
     ${title(props)}
     <div class="index__body">
       ${text(props)}
+      ${image(props)}
     </div>
     <div class="index__footer" aria-hidden="true">
       ${prompt(props)}
       ${choices(props)}
+      ${end(props)}
     </div>
     <div class="index__footer index__footer--overlay">
       ${prompt(props)}
       ${choices(props)}
+      ${end(props)}
     </div>
   </div>
 `
