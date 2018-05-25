@@ -85,7 +85,6 @@ describe('#choice', () => {
 
   test('not shown if narrative choiceText is missing', () => {
     const actual = choice({ narrative, store })
-    console.log('narrative', narrative)
     expect(actual).toBe(null)
   })
 
