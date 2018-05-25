@@ -5,5 +5,6 @@ export type Narrative = {
   text: string,
   prompt?: string,
   choices?: NarrativeId[],
-  choiceText?: string
+  choiceText?: string,
+  image?: string
 }
