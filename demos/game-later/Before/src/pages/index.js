@@ -10,7 +10,7 @@ type IndexProps = {
   store: { data: Narrative[] }
 }
 
-const title = (_: IndexProps) => html`
+export const title = (_: IndexProps) => html`
   <h4 class="index__title">
     <a href="/" class="index__title-link">
       Galactic Pigs: A Prelude
@@ -28,20 +28,26 @@ export const end = (props: IndexProps) =>
     ? null
     : html`<div class="index__end">The end.  Now play the game...</div>`
 
-const text = (props: IndexProps) =>
+export const text = (props: IndexProps) =>
   html`<div class="index__text">${props.narrative.text}</div>`
 
-const prompt = (props: IndexProps) =>
-  html`<div class="index__prompt">${props.narrative.prompt}</div>`
+export const prompt = (props: IndexProps) =>
+  props.narrative.prompt
+    ? html`<div class="index__prompt">${props.narrative.prompt}</div>`
+    : null
 
-const choice = (props: IndexProps) => html`
+export const choice = (props: IndexProps) =>
+  props.narrative.choiceText
+    ? html`
   <div class="index__choice">
     <a href="${props.narrative.id}" class="index__choice-button">${
-  props.narrative.choiceText
-}</a>
+        props.narrative.choiceText
+      }</a>
   </div>
 `
-const getChoices = (props: IndexProps) =>
+    : null
+
+export const getChoices = (props: IndexProps) =>
   props.store.data.filter(
     n =>
       Array.isArray(props.narrative.choices) &&
