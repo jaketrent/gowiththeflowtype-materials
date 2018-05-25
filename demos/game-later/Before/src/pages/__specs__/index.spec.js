@@ -1,12 +1,4 @@
-const {
-  choice,
-  end,
-  getChoices,
-  image,
-  prompt,
-  text,
-  title
-} = require('../index')
+import { choice, end, getChoices, image, prompt, text, title } from '../index'
 
 const narrative = { id: 111, text: 'some text' }
 const narratives = [
