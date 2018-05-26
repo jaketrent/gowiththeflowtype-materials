@@ -12,17 +12,11 @@ const store = {
 }
 
 describe('#prompt', () => {
-  // removeable -- signature test
-  test('takes props', () => {
-    expect(prompt.length).toBe(1)
-  })
-
   test('not shown if narrative prompt is missing', () => {
     const actual = prompt({ narrative, store })
     expect(actual).toBe(null)
   })
 
-  // keep - tests content, not just type
   test('returns html of narrative prompt', () => {
     const narrativePrompt = 'some prompt'
     const actual = prompt({
@@ -38,12 +32,6 @@ describe('#prompt', () => {
 })
 
 describe('#text', () => {
-  // removeable -- signature test
-  test('takes props', () => {
-    expect(text.length).toBe(1)
-  })
-
-  // keep - tests content, not just type
   test('returns html of narrative text', () => {
     const narrativeText = 'some text'
     const actual = text({ narrative, store })
@@ -53,11 +41,6 @@ describe('#text', () => {
 })
 
 describe('#image', () => {
-  // removeable -- signature test
-  test('takes props', () => {
-    expect(image.length).toBe(1)
-  })
-
   test('not shown if narrative image is missing', () => {
     const actual = image({ narrative, store })
     expect(actual).toBe(null)
@@ -78,11 +61,6 @@ describe('#image', () => {
 })
 
 describe('#choice', () => {
-  // removeable -- signature test
-  test('takes props', () => {
-    expect(choice.length).toBe(1)
-  })
-
   test('not shown if narrative choiceText is missing', () => {
     const actual = choice({ narrative, store })
     expect(actual).toBe(null)
@@ -104,10 +82,6 @@ describe('#choice', () => {
 })
 
 describe('#title', () => {
-  test('takes props arg', () => {
-    expect(title.length).toBe(1)
-  })
-
   test('returns styled template', () => {
     const actual = title({ narrative, store })
     expect(actual.getHTML()).toEqual(expect.stringMatching(/title/))
@@ -123,10 +97,6 @@ describe('#getChoices', () => {
 })
 
 describe('#end', () => {
-  test('takes props', () => {
-    expect(end.length).toBe(1)
-  })
-
   test('returns nothing if narrative has choices', () => {
     const actual = end({
       narrative: narratives[2],
