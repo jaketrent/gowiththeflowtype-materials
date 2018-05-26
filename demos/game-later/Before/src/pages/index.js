@@ -1,5 +1,6 @@
 // @flow
 import type { Narrative, NarrativeId } from '../narratives/types'
+import type { Router, RouteContext } from '../routes'
 
 import { render, html } from 'lit-html'
 
@@ -80,13 +81,7 @@ const index = (props: IndexProps) => html`
   </div>
 `
 
-type RouteContext = {
-  params: {
-    [string]: string
-  }
-}
-
-export default async (ctx: RouteContext) => {
+export default async (router: Router, ctx: RouteContext) => {
   const data = await fetchAll()
   const store: { data: Narrative[] } = {
     data
