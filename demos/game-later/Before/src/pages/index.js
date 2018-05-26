@@ -81,7 +81,7 @@ const index = (props: IndexProps) => html`
   </div>
 `
 
-export default async (router: Router, ctx: RouteContext) => {
+export default async (_: any, ctx: RouteContext) => {
   const data = await fetchAll()
   const store: { data: Narrative[] } = {
     data
