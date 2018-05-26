@@ -1,0 +1,131 @@
+:root {
+  --colorsPrimary: #226583;
+  --colorsPrimary2: #12506B;
+  --colorsContrast: #fff;
+  --colorsAccent1: #CFA22E;
+  --colorsAccent2: #CF4D2E;
+}
+
+/* general */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+}
+html, body, :global(#app) {
+  height: 100%;
+}
+a,
+button {
+  cursor: pointer;
+}
+
+/* pages */
+.index {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  min-height: 100%;
+}
+.index__body {
+  padding: 20px;
+  overflow: scroll;
+}
+.index__footer {
+  width: 100%;
+  padding: 16px 24px 16px 24px;
+  visibility: hidden;
+}
+.index__footer--overlay {
+  background: #fff;
+  border-top: 1px solid black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  visibility: visible;
+}
+.index__title {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0;
+  background: var(--colorsPrimary);
+}
+.index__title-link {
+  color: var(--colorsContrast);
+  text-decoration: none;
+  font-size: 1.5em;
+}
+.index__text {
+  color: #888;
+  font-size: 1.25em;
+}
+.index__image {
+  display: block;
+  margin: 24px auto;
+  max-width: 80%;
+  max-height: 100%;
+}
+.index__prompt {
+  margin-bottom: 16px;
+  font-size: 1.25em;
+}
+.index__choice {
+  display: block;
+}
+.index__choice-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 1.125em;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  background: var(--colorsPrimary);
+  border-radius: 2px;
+  color: var(--colorsContrast);
+  border: 0;
+  text-decoration: none;
+}
+.index__choice-button:hover,
+.index__choice-button:active {
+  background: var(--colorsPrimary2);
+  color: var(--colorsAccent1);
+}
+.index__end {
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.error__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 1.25rem;
+}
+.error__text {
+  font-size: 1.25em;
+}
+.error__code {
+  font-size: 6em;
+  font-weight: 800;
+  line-height: 1.5em;
+  color: var(--colorsPrimary);
+  text-shadow: 4px 4px 0 var(--colorsAccent1);
+}
+.error__start {
+  color: var(--colorsContrast);
+  background: var(--colorsPrimary);
+  text-decoration: none;
+}
+.error__start:hover,
+.error__start:focus,
+.error__start:active {
+  background: var(--colorsAccent1);
+}
