@@ -12,7 +12,6 @@ const store = {
 }
 
 describe('#prompt', () => {
-  // removeable -- signature test
   test('takes props', () => {
     expect(prompt.length).toBe(1)
   })
@@ -22,7 +21,6 @@ describe('#prompt', () => {
     expect(actual).toBe(null)
   })
 
-  // keep - tests content, not just type
   test('returns html of narrative prompt', () => {
     const narrativePrompt = 'some prompt'
     const actual = prompt({
@@ -38,12 +36,10 @@ describe('#prompt', () => {
 })
 
 describe('#text', () => {
-  // removeable -- signature test
   test('takes props', () => {
     expect(text.length).toBe(1)
   })
 
-  // keep - tests content, not just type
   test('returns html of narrative text', () => {
     const narrativeText = 'some text'
     const actual = text({ narrative, store })
@@ -53,7 +49,6 @@ describe('#text', () => {
 })
 
 describe('#image', () => {
-  // removeable -- signature test
   test('takes props', () => {
     expect(image.length).toBe(1)
   })
@@ -78,7 +73,6 @@ describe('#image', () => {
 })
 
 describe('#choice', () => {
-  // removeable -- signature test
   test('takes props', () => {
     expect(choice.length).toBe(1)
   })
